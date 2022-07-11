@@ -19,7 +19,7 @@ export default function ToDoItem(props: { items: ToDoItem[]; setItems: Dispatch<
       {props.items.map((item) => (
         <li key={item.id}>
           <input type="checkbox" checked={item.completed} id={item.id} onChange={toggleCompleted} />
-          <label>{item.title}</label>
+          <label>{item.title}set</label>
         </li>
       ))}
     </ul>
