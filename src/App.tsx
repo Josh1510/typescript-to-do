@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { useState, Dispatch, SetStateAction } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { v4 as uuidV4 } from 'uuid';
+import ToDoForm from './components/ToDoForm';
+import ToDoItem from './components/ToDoItem';
 
 function App() {
+  const [items, setItems] = useState<ToDoItem[]>([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header"></header>
+
+      {/* <ul>
+        {items.map((item) => (
+          <ToDoItem {...item} />
+        ))}
+      </ul> */}
+      <ToDoItem items={items} setItems={setItems} />
+      <ToDoForm items={items} setItems={setItems} />
     </div>
   );
 }
